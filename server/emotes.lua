@@ -1,0 +1,44 @@
+local SMDXCore = exports['smdx-core']:GetCoreObject()
+
+SMDXCore.Commands.Add('emotemenu', Lang:t('commands.emoteMenu'), {}, false, function(source)
+    local src = source
+    TriggerClientEvent('emotes:client:EmoteMenu', src)
+end)
+
+SMDXCore.Commands.Add('em', Lang:t('commands.emoteMenu'), {}, false, function(source)
+    local src = source
+    TriggerClientEvent('emotes:client:EmoteMenu', src)
+end)
+
+CreateThread(function()
+    for k, v in pairs(Config.Emotes.Actions) do
+        SMDXCore.Commands.Add(k, v.desc, {}, false, function(source)
+            local src = source
+            TriggerClientEvent('emotes:client:doemote', src, v.anim)
+        end)        
+    end
+    for k, v in pairs(Config.Emotes.Greeting) do
+        SMDXCore.Commands.Add(k, v.desc, {}, false, function(source)
+            local src = source
+            TriggerClientEvent('emotes:client:doemote', src, v.anim)
+        end)        
+    end
+    for k, v in pairs(Config.Emotes.Reactions) do
+        SMDXCore.Commands.Add(k, v.desc, {}, false, function(source)
+            local src = source
+            TriggerClientEvent('emotes:client:doemote', src, v.anim)
+        end)        
+    end
+    for k, v in pairs(Config.Emotes.Taunting) do
+        SMDXCore.Commands.Add(k, v.desc, {}, false, function(source)
+            local src = source
+            TriggerClientEvent('emotes:client:doemote', src, v.anim)
+        end)        
+    end
+    for k, v in pairs(Config.Emotes.Dancing) do
+        SMDXCore.Commands.Add(k, v.desc, {}, false, function(source)
+            local src = source
+            TriggerClientEvent('emotes:client:dodictemote', src, v.dict, v.anim, v.duration)
+        end)        
+    end
+end)
