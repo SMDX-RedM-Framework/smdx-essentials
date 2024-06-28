@@ -1,4 +1,4 @@
-local SMDXCore = exports['smdx-core']:GetCoreObject()
+local SMDXCore = exports['smdx-core']:GetSMDX()
 
 SMDXCore.Commands.Add('emotemenu', Lang:t('commands.emoteMenu'), {}, false, function(source)
     local src = source

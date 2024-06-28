@@ -4,6 +4,7 @@ game 'rdr3'
 
 author 'SMDX Development'
 description 'smdx-essentials'
+version '1.0.0'
 
 shared_scripts {
     '@smdx-core/shared/locale.lua',

@@ -17,7 +17,7 @@ ConsumeablesDrink = {
 }
 
 Config.Discord = {
-    ["discord_id"]              = ,
+    ["discord_id"]              = 23243543,
     ["discord_joinurl"]         = "",
     ["discord_connecturl"]      = "",
     ["discord_big_image"]       = "wood-sign-3d-render-transparency-png",
